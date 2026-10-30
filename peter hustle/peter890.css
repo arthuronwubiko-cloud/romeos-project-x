@@ -1,0 +1,659 @@
+/* Smooth scrolling supports the page's section links in the navigation. */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fffaf5;
+  color: #292522;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-bar {
+  /* Keep the main navigation visible as visitors move down the home page. */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid #eadfd4;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(67 43 23 / 10%);
+}
+
+.logo {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
+.nav-links a {
+  position: relative;
+  color: #39322e;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.35rem;
+  left: 0;
+  height: 2px;
+  background: #b72025;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #b72025;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.search-bar {
+  /* This styles the search control; filtering behavior is not implemented. */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 220px;
+  max-width: 100%;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: #a92c31;
+  border: 1px solid #d15c60;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+}
+
+.search-bar input::placeholder {
+  color: #f3dfe0;
+}
+
+.search-bar input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.search-bar i {
+  color: #fff;
+}
+
+.main-text {
+  /* Desktop hero: introduction and featured pizza sit in adjacent columns. */
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: min(1200px, calc(100% - 3rem));
+  margin: 2.5rem auto 0;
+  box-sizing: border-box;
+}
+
+.section-text {
+  display: grid;
+  justify-items: start;
+  gap: 1.25rem;
+}
+
+.span-text {
+  color: #f04b50;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-text .h1-text {
+  margin: 0;
+  color: #f04b50;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  line-height: 1;
+}
+
+.p-text {
+  max-width: 32rem;
+  margin: 0;
+  color: #625a54;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.motto {
+  margin: -0.75rem 0 0;
+  color: #93600f;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  background: #b72025;
+  box-shadow: 0 0 18px rgb(183 32 37 / 30%);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.order-button:hover {
+  transform: translateY(-2px);
+  background: #96161a;
+  box-shadow: 0 6px 20px rgb(183 32 37 / 45%);
+}
+
+.order-button:focus-visible,
+.social-links a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.nav-links a:focus-visible,
+.menu-link:focus-visible,
+.menu-card-content > a:focus-visible {
+  outline: 2px solid #292522;
+  outline-offset: 4px;
+}
+
+/* Featured Pizza Image Frame Hover Elevation */
+.pizza-frame {
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 1.25rem;
+  background: #f1e9e1;
+  transition:
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pizza-frame:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgb(67 43 23 / 15%);
+}
+
+.pizza-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pizza-frame:hover .pizza-img {
+  transform: scale(1.04);
+}
+
+.menu-section {
+  /* Shared centered container for the menu preview and location sections. */
+  width: min(1200px, calc(100% - 3rem));
+  margin: 5rem auto 0;
+  scroll-margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+.menu-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: #93600f;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-heading h2 {
+  margin: 0;
+  color: #292522;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.menu-link,
+.menu-card-content > a {
+  color: #b72025;
+  font-weight: 700;
+}
+
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.35rem;
+}
+
+.menu-grid {
+  /* Three preview cards on wide screens; media queries reduce the columns. */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card Hover Animations (Pop-up lift & shadow fade) */
+.menu-card {
+  overflow: hidden;
+  border: 1px solid #eadfd4;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(67 43 23 / 8%);
+  transition:
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-sizing: border-box;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgb(67 43 23 / 16%);
+}
+
+.menu-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover > img {
+  transform: scale(1.05);
+}
+
+.menu-card-content {
+  padding: 1.25rem;
+}
+
+.menu-label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: #93600f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-card h3 {
+  margin: 0.2rem 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.menu-card p {
+  min-height: 3.2em;
+  margin: 0 0 1rem;
+  color: #625a54;
+  line-height: 1.6;
+}
+
+.menu-card-content > a:hover,
+.menu-link:hover {
+  color: #7f1519;
+}
+
+.location-section {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 5rem auto 0;
+  scroll-margin-top: 2rem;
+}
+
+.location-heading {
+  margin-bottom: 2rem;
+}
+
+.location-heading h2 {
+  margin: 0;
+  color: #292522;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.location-city + .location-city {
+  margin-top: 2.5rem;
+}
+
+.location-city h3 {
+  margin: 0 0 1rem;
+  color: #b72025;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.7rem;
+}
+
+.location-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.location-card {
+  /* Fixed flex basis keeps incomplete rows from stretching wider than other cards. */
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #eadfd4;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(67 43 23 / 8%);
+  transition:
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgb(67 43 23 / 15%);
+}
+
+.location-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f1e9e1;
+}
+
+.location-card h4 {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  color: #292522;
+  font-size: 1.15rem;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 5rem;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid #eadfd4;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.footer-motto {
+  margin: 0;
+  color: #93600f;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.4rem;
+}
+
+.social-links a {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #d8c9bc;
+  border-radius: 50%;
+  color: #433a34;
+  font-size: 1.1rem;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  border-color: #b72025;
+  background: #b72025;
+  color: #fff;
+}
+
+.pizza-family {
+  /* Horizontal gallery with snap points so each photo settles into view. */
+  display: flex;
+  gap: 15px;
+  width: min(1200px, calc(100% - 3rem));
+  height: 440px;
+  margin: 30px auto 70px;
+  padding: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #eadfd4;
+  border-radius: 1rem;
+  background: #f1e9e1;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #b72025 #eadfd4;
+  box-sizing: border-box;
+}
+
+.pizza-family .scroll {
+  flex: 0 0 50%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid #eadfd4;
+  border-radius: 0.65rem;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.pizza-family .pizza-scroll {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.pizza-family .scroll:hover .pizza-scroll {
+  transform: scale(1.04);
+}
+
+@media (max-width: 800px) {
+  /* Tablet layout: stack the hero and reduce the preview grid to two columns. */
+  .nav-bar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .main-text {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .section-text {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .location-section {
+    width: calc(100% - 2rem);
+  }
+
+  .location-card {
+    flex-basis: calc((100% - 1.25rem) / 2);
+  }
+
+  .p-text {
+    max-width: 38rem;
+  }
+
+  .pizza-frame {
+    width: min(100%, 620px);
+    margin: 0 auto;
+  }
+
+  .pizza-family {
+    height: 330px;
+    margin: 25px auto 50px;
+    gap: 12px;
+  }
+
+  .pizza-family .scroll {
+    flex-basis: 65%;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Phone layout: compact header and single-column menu cards. */
+  .main-text,
+  .pizza-family {
+    width: calc(100% - 2rem);
+  }
+
+  .nav-bar {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .menu-section {
+    width: calc(100% - 2rem);
+    margin-top: 3.5rem;
+  }
+
+  .menu-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-section {
+    margin-top: 3.5rem;
+  }
+
+  .location-card {
+    flex-basis: 100%;
+  }
+
+  .menu-card p {
+    min-height: 0;
+  }
+
+  .main-text {
+    margin-top: 1rem;
+  }
+
+  .pizza-family {
+    height: 260px;
+    padding: 8px;
+    gap: 10px;
+    margin: 25px auto 45px;
+    border-radius: 12px;
+  }
+
+  .pizza-family .scroll {
+    flex-basis: 90%;
+  }
+}
+
+@media (max-width: 350px) {
+  /* Narrow gallery slides further to prevent overflow on very small screens. */
+  .pizza-family {
+    height: 220px;
+  }
+
+  .pizza-family .scroll {
+    flex-basis: 95%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Respect the visitor's system preference for less animated movement. */
+  html,
+  .pizza-family {
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  .pizza-family .scroll:hover .pizza-scroll,
+  .menu-card:hover,
+  .menu-card:hover > img,
+  .pizza-frame:hover {
+    transform: none;
+  }
+}

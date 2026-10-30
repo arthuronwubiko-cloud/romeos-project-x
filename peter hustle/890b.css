@@ -1,0 +1,663 @@
+
+/* =========================
+   GENERAL RESET
+========================= */
+/* Normalize box sizing and establish the shared page defaults. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffaf5;
+    color: #292522;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+/* Sticky header keeps the page's navigation available while scrolling. */
+
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eadfd4;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 18px rgb(67 43 23 / 10%);
+}
+
+.navbar {
+    width: min(1200px, calc(100% - 4rem));
+    min-height: 82px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    color: #39322e;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.35rem;
+    left: 0;
+    height: 2px;
+    background: #b72025;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #b72025;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================
+   MENU HERO
+========================= */
+/* Desktop hero pairs text and image; the phone breakpoint stacks them. */
+
+.menu-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    width: min(1200px, calc(100% - 4rem));
+    margin: 2.5rem auto 0;
+}
+
+.hero-copy {
+    display: grid;
+    justify-items: start;
+    gap: 1.25rem;
+}
+
+.breadcrumb {
+    margin: 0;
+    color: #625a54;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #b72025;
+}
+
+.section-label {
+    margin: 0;
+    color: #93600f;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.menu-hero h1 {
+    margin: 0;
+    color: #f04b50;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+}
+
+.hero-motto {
+    margin: -0.75rem 0 0;
+    color: #93600f;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 32rem;
+    margin: 0;
+    color: #625a54;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.hero-image {
+    min-width: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 1.25rem;
+    background: #f1e9e1;
+    transition:
+        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-image:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgb(67 43 23 / 15%);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+/* Shared button styles keep menu and order calls to action consistent. */
+
+.menu-button,
+.order-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b72025;
+    color: #ffffff;
+    font-weight: 700;
+    border: 1px solid #b72025;
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgb(183 32 37 / 30%);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-button {
+    min-height: 48px;
+    padding: 0.75rem 1.8rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.menu-button:hover,
+.order-button:hover {
+    background-color: #96161a;
+    color: #ffffff;
+    border-color: #96161a;
+    box-shadow: 0 6px 20px rgb(183 32 37 / 45%);
+}
+
+.menu-button:hover,
+.order-button:hover {
+    transform: translateY(-2px);
+}
+
+.menu-button:focus-visible,
+.order-button:focus-visible,
+.footer-nav a:focus-visible {
+    outline: 2px solid #b72025;
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   MENU SECTIONS
+========================= */
+/* Category sections are centered; scroll padding keeps anchors below the header. */
+
+.menu-section {
+    width: min(1200px, calc(100% - 4rem));
+    margin: 5rem auto 0;
+    padding: 0 0 5rem;
+}
+
+.special-section {
+    border-top: 1px solid #eadfd4;
+    border-bottom: 1px solid #eadfd4;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: #292522;
+    margin: 0 0 0.75rem;
+}
+
+.section-heading > p:last-child {
+    color: #625a54;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* =========================
+   PIZZA GRID
+========================= */
+/* Product cards use three columns on desktop and fewer columns on small screens. */
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+
+/* =========================
+   PIZZA CARDS
+========================= */
+/* Flex layout lets product descriptions grow while aligning prices and buttons. */
+
+.pizza-card {
+    min-width: 0;
+    background-color: #fff;
+    border: 1px solid #eadfd4;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgb(67 43 23 / 8%);
+    transition:
+        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pizza-card:hover {
+    transform: translateY(-8px);
+    border-color: #eadfd4;
+    box-shadow: 0 20px 40px rgb(67 43 23 / 16%);
+}
+
+.pizza-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background-color: #f1e9e1;
+    transition: transform 0.4s ease;
+}
+
+.pizza-card:hover .pizza-image {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   PIZZA INFORMATION
+========================= */
+
+.pizza-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.pizza-info h3 {
+    color: #292522;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.pizza-info > p {
+    color: #625a54;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+
+/* =========================
+   PRICE & ORDER BUTTON
+========================= */
+
+.pizza-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #eadfd4;
+}
+
+.price {
+    color: #93600f;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.order-button {
+    padding: 11px 14px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   PIZZA DEALS SECTION
+========================= */
+/* Temporary promotional area; replace its copy when real offers are available. */
+
+.extra-section {
+    margin-top: 0;
+    padding: 5rem max(2rem, calc((100% - 1200px) / 2));
+    border-top: 1px solid #eadfd4;
+    background-color: #f1e9e1;
+    text-align: center;
+}
+
+.extra-section h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: #292522;
+    margin-bottom: 12px;
+}
+
+.extra-section p {
+    color: #625a54;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background-color: #fffaf5;
+    border-top: 1px solid #eadfd4;
+    padding: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.footer-content > p:first-of-type {
+    color: #93600f;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.footer-nav a {
+    color: #39322e;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #b72025;
+}
+
+.copyright {
+    width: 100%;
+    padding-top: 22px;
+    border-top: 1px solid #eadfd4;
+    color: #625a54;
+    font-size: 12px;
+}
+
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+/* At tablet widths, shrink the header and show two products in each row. */
+
+@media screen and (max-width: 1024px) {
+
+    .navbar {
+        width: 92%;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .pizza-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .pizza-image {
+        height: 230px;
+    }
+
+    .pizza-info {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+/* At phone widths, stack the hero and show one product card per row. */
+
+@media screen and (max-width: 650px) {
+
+    .navbar {
+        width: calc(100% - 2rem);
+        padding: 0.85rem 0;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .menu-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        width: calc(100% - 2rem);
+        margin-top: 1.5rem;
+    }
+
+    .hero-copy {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: min(100%, 620px);
+        margin: 0 auto;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .menu-section {
+        width: calc(100% - 2rem);
+        margin-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 14px;
+    }
+
+    .pizza-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .pizza-image {
+        height: 250px;
+    }
+
+    .pizza-info {
+        padding: 22px;
+    }
+
+    .pizza-info h3 {
+        font-size: 20px;
+    }
+
+    .pizza-bottom {
+        gap: 12px;
+    }
+
+    .order-button {
+        padding: 12px 16px;
+    }
+
+    .footer-nav {
+        gap: 15px 20px;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    .logo {
+        width: 120px;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+/* Tighten navigation and stack order controls on very narrow screens. */
+
+@media screen and (max-width: 380px) {
+
+    .nav-links {
+        gap: 10px 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .pizza-image {
+        height: 210px;
+    }
+
+    .pizza-info {
+        padding: 17px;
+    }
+
+    .pizza-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-button {
+        width: 100%;
+    }
+
+}

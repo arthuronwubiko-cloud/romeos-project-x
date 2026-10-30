@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Menu | Romeo's Pizza</title>
+    <link
+      rel="icon"
+      href="https://romeospizza.ng/wp-content/uploads/2020/10/favicon_2.ico"
+    />
+    <!-- Page styles are kept in a separate file beside this HTML document. -->
+    <link rel="stylesheet" href="peter890.css" />
+    <!-- Font Awesome supplies the search and social-media icons below. -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sticky site header: in-page links use section IDs; Menu opens 890b.html. -->
+    <header class="nav-bar" id="home">
+      <div>
+        <a href="#home" aria-label="Romeo's Pizza home">
+          <img
+            src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2024/01/logo.png.bv.webp"
+            alt="Romeo's Pizza"
+            class="logo"
+          />
+        </a>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="890b.html">Menu</a>
+        <a href="#locations">Locations</a>
+        <a
+          href="https://www.facebook.com/romeospizzang"s
+          target="_blank"
+          rel="noopener noreferrer"
+          >Order</a
+        >
+      </nav>
+      <!-- Search field styling is presentational; no search behavior is wired up. -->
+      <div class="search-bar" role="search">
+        <input type="search" placeholder="Search..." aria-label="Search menu" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </header>
+
+    <!-- Home-page hero: introduction and order link beside the featured image. -->
+    <main class="main-text">
+      <section class="section-text">
+        <span class="span-text">Romeo's</span>
+        <h1 class="h1-text">Fresh Pizza</h1>
+        <p class="motto">The Secret is in our sauce</p>
+        <p class="p-text">
+          Discover the taste of authentically crafted pizza made with the finest
+          local ingredients. Every slice is a journey of flavor, baked to
+          perfection in our custom ovens.
+        </p>
+        <a
+          href="https://www.facebook.com/romeospizzang"
+          class="order-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >ORDER NOW</a
+        >
+      </section>
+
+      <section class="pizza-frame" aria-label="Featured pizza">
+        <img
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+          alt="Fresh pizza topped with tomato and herbs"
+          class="pizza-img"
+        />
+      </section>
+    </main>
+
+    <!-- Short menu preview; the full-menu link opens the separate menu page. -->
+    <section class="menu-section" id="menu" aria-labelledby="menu-heading">
+      <div class="menu-heading">
+        <div>
+          <p class="eyebrow">Good food, made to share</p>
+          <h2 id="menu-heading">Our Menu</h2>
+        </div>
+        <a
+          href="890b.html"
+          class="menu-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View full menu
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            aria-hidden="true"
+          ></i>
+        </a>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+            alt="Freshly baked pizza topped with tomato and herbs"
+            loading="lazy"
+          />
+          <div class="menu-card-content">
+            <h3>Pizza</h3>
+            <p>Freshly baked, generously topped, and perfect for sharing.</p>
+            <a
+              href="https://www.facebook.com/romeospizzang"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Order pizza</a
+            >
+          </div>
+        </article>
+        <article class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+            alt="Chicken shawarma wrapped with vegetables"
+            loading="lazy"
+          />
+          <div class="menu-card-content">
+            <span class="menu-label">Side</span>
+            <h3>Shawarma</h3>
+            <p>A savoury, flavour-packed side to enjoy with your meal.</p>
+            <a
+              href="https://www.facebook.com/romeospizzang"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Order shawarma</a
+            >
+          </div>
+        </article>
+        <article class="menu-card">
+          <img
+            src="https://beyondsweetandsavory.com/wp-content/uploads/2022/02/Korean-fried-chicken-wings-VyTran-7.jpg"
+            alt="Saucy chicken wings served with dipping sauce"
+            loading="lazy"
+          />
+          <div class="menu-card-content">
+            <span class="menu-label">Side</span>
+            <h3>Chicken Wings</h3>
+            <p>
+              Juicy, saucy wings made for sharing or keeping all to yourself.
+            </p>
+            <a
+              href="https://www.facebook.com/romeospizzang"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Order wings</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Store cards are grouped by city so visitors can find a nearby location. -->
+    <section
+      class="location-section"
+      id="locations"
+      aria-labelledby="locations-heading"
+    >
+      <div class="location-heading">
+        <p class="eyebrow">Find your nearest store</p>
+        <h2 id="locations-heading">Our Locations</h2>
+      </div>
+
+      <section class="location-city" aria-labelledby="abuja-heading">
+        <h3 id="abuja-heading">Abuja</h3>
+        <div class="location-grid">
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-GARKI-STORE-1536.png.bv.webp"
+              alt="Romeo's Pizza Garki store"
+              loading="lazy"
+            />
+            <h4>Garki</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-GWARINPA-STORE-1536.png.bv.webp"
+              alt="Romeo's Pizza Gwarinpa store"
+              loading="lazy"
+            />
+            <h4>Gwarinpa</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-LUGBE-STORE-1536.png.bv.webp"
+              alt="Romeo's Pizza Lugbe store"
+              loading="lazy"
+            />
+            <h4>Lugbe</h4>
+          </article>
+        </div>
+      </section>
+
+      <section class="location-city" aria-labelledby="lagos-heading">
+        <h3 id="lagos-heading">Lagos</h3>
+        <div class="location-grid">
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/2026/01/ROMEOS-PIZZA-YABA-WEBSITE-1.png"
+              alt="Romeo's Pizza Yaba store"
+              loading="lazy"
+            />
+            <h4>Yaba</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/2025/01/ROMEOS-SURULERE-STORE.png"
+              alt="Romeo's Pizza Surulere store"
+              loading="lazy"
+            />
+            <h4>Surulere</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-OKOTA-STORE-min.png"
+              alt="Romeo's Pizza Okota store"
+              loading="lazy"
+            />
+            <h4>Okota</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-FESTAC-STORE.png.bv.webp"
+              alt="Romeo's Pizza Festac store"
+              loading="lazy"
+            />
+            <h4>Festac</h4>
+          </article>
+          <article class="location-card">
+            <img
+              src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2025/02/ROMEOS-AJAO-STORE.png.bv.webp"
+              alt="Romeo's Pizza Ajao store"
+              loading="lazy"
+            />
+            <h4>Ajao</h4>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- Horizontal, scroll-snapping photo gallery; each image has descriptive alt text. -->
+    <section class="pizza-family" id="pizza-gallery" aria-label="Pizza photos">
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Fresh pizza topped with tomato and herbs"
+          class="pizza-scroll"
+        />
+      </div>
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Wood-fired pizza fresh from the oven"
+          class="pizza-scroll"
+        />
+      </div>
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Vegetable pizza topped with tomatoes, mushrooms, and herbs"
+          class="pizza-scroll"
+        />
+      </div>
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Margherita pizza with fresh basil"
+          class="pizza-scroll"
+        />
+      </div>
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Pizza topped with spinach and mozzarella"
+          class="pizza-scroll"
+        />
+      </div>
+      <div class="scroll">
+        <img
+          src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          alt="Freshly baked pizza with tomato and basil"
+          class="pizza-scroll"
+        />
+      </div>
+    </section>
+    <!-- Footer branding and external social-sharing links. -->
+    <footer class="site-footer">
+      <a href="#home" aria-label="Romeo's Pizza home">
+        <img
+          src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2024/01/logo.png.bv.webp"
+          alt="Romeo's Pizza"
+          class="footer-logo"
+          loading="lazy"
+        />
+      </a>
+      <p class="footer-motto">The Secret is in our sauce</p>
+      <nav class="social-links" aria-label="Share Romeo's Pizza">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fromeospizza.ng%2Forder-now%2F"
+          aria-label="Share on Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fromeospizza.ng%2Forder-now%2F"
+          aria-label="Share on X"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fromeospizza.ng%2Forder-now%2F"
+          aria-label="Share on LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://t.me/share/url?url=https%3A%2F%2Fromeospizza.ng%2Forder-now%2F"
+          aria-label="Share on Telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+        </a>
+      </nav><br /><p>the secret is in our sauce</p>
+    </footer>
+    <br />
+      <p class="footer-text" style="text-align: center; font-size: 14px;">
+        &copy; 2021 Romeo's Pizza Nigeria. All rights reserved</p>
+    </footer>
+  </body>
+</html>
