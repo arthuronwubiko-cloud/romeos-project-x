@@ -6,14 +6,13 @@
 
     <title>Romeo's Pizza Nigeria | Our Menu</title>
 
-    <link rel="stylesheet" href="890b.css" />
+    <link rel="stylesheet" href="peter890.css" />
   </head>
 
   <body>
     <!-- Site header: the navigation links jump to sections on this page or return home. -->
-    <header class="header">
-      <nav class="navbar">
-        <a href="peter890.html" class="logo-link">
+    <header class="nav-bar">
+        <a href="index.html" class="logo-link">
           <img
             src="https://romeospizza.ng/wp-content/uploads/al_opt_content/IMAGE/romeospizza.ng/wp-content/uploads/2024/01/logo.png.bv.webp"
             alt="Romeo's Pizza Logo"
@@ -21,12 +20,18 @@
           />
         </a>
 
-        <ul class="nav-links">
-          <li><a href="peter890.html">Home</a></li>
-          <li><a href="#pizza-menu">Pizza Menu</a></li>
-          <li><a href="#pizza-deals">Pizza Deals</a></li>
-        </ul>
-      </nav>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="#pizzamenu" aria-current="page"> Menu</a>
+          <a href="index.html#locations">Locations</a>
+          <a href="deals.html"> Deals</a>
+          <a
+            href="https://www.facebook.com/romeospizzang"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Order</a
+          >
+        </nav>
     </header>
 
     <!-- Main content begins with the menu hero and its jump-to-menu call to action. -->
@@ -34,7 +39,7 @@
       <section class="menu-hero" id="pizza-menu">
         <div class="hero-copy">
           <p class="breadcrumb">
-            <a href="peter890.html">Home</a> / Pizza Menu
+            <a href="index.html">Home</a> / Pizza Menu
           </p>
 
           <p class="section-label">FRESHLY MADE, FULL OF FLAVOR</p>
@@ -425,16 +430,14 @@
           class="footer-logo"
         />
 
-        <p>Freshly made. Full of flavor.</p>
+        <p class="footer-motto">The Secret is in our sauce</p>
 
         <nav class="footer-nav">
-          <a href="peter890.html">Home</a>
+          <a href="index.html">Home</a>
           <a href="#pizza-menu">Pizza Menu</a>
-          <a href="#pizza-deals">Pizza Deals</a>
+          <a href="pizzadeals.html">Pizza Deals</a>
         </nav>
-        <p>it is all in the sauce</p>
-        s<br />
-        <p class="copyright">&copy; 2026 Romeo's Pizza Menu Demo.</p>
+        <p class="footer-text">&copy; 2026 Romeo's Pizza Nigeria. All rights reserved.</p>
       </div>
     </footer>
   </body>
